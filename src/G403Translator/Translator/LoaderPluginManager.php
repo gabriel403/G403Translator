@@ -8,10 +8,11 @@
  * @package   Zend_I18n
  */
 
-namespace Zend\I18n\Translator;
+namespace G403Translator\Translator;
 
 use Zend\I18n\Exception;
 use Zend\ServiceManager\AbstractPluginManager;
+use Zend\I18n\Translator\Loader;
 
 /**
  * Plugin manager implementation for translation loaders.
@@ -34,7 +35,7 @@ class LoaderPluginManager extends AbstractPluginManager
     protected $invokableClasses = array(
         'phparray' => 'Zend\I18n\Translator\Loader\PhpArray',
         'gettext'  => 'Zend\I18n\Translator\Loader\Gettext',
-        'database' => 'Zend\I18n\Translator\Loader\Database',
+        'database' => 'G403Translator\Translator\Loader\Database',
     );
 
     /**
