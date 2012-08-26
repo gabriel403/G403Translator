@@ -1,0 +1,28 @@
+{
+    "name": "gabriel403/G403Translator",
+    "description": "Extension to zend translator to support loading translations from db.",
+    "type": "library",
+    "keywords": [
+        "zf2"
+    ],
+    "homepage": "https://github.com/gabriel403/G403Translator",
+    "authors": [
+        {
+            "name": "Gabriel Baker",
+            "email": "gabriel@autonomicpilot.co.uk",
+            "homepage": "http://autonomicpilot.co.uk"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "G403Translator": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
