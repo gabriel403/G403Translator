@@ -16,6 +16,7 @@ use Zend\Cache;
 use Zend\Cache\Storage\StorageInterface as CacheStorage;
 use Zend\I18n\Exception;
 use Zend\Stdlib\ArrayUtils;
+use Zend\I18n\Translator\Translator as TranslatorO
 
 /**
  * Translator.
@@ -24,7 +25,7 @@ use Zend\Stdlib\ArrayUtils;
  * @package    Zend_I18n
  * @subpackage Translator
  */
-class Translator
+class Translator extends TranslatorO
 {
     /**
      * Messages loaded by the translator.
