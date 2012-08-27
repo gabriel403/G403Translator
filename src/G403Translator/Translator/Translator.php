@@ -17,7 +17,6 @@ use Zend\Cache\Storage\StorageInterface as CacheStorage;
 use Zend\I18n\Exception;
 use Zend\Stdlib\ArrayUtils;
 use Zend\I18n\Translator\Translator as TranslatorO;
-use G403Translator\Translator\LoaderPluginManager;
 
 /**
  * Translator.
@@ -28,6 +27,34 @@ use G403Translator\Translator\LoaderPluginManager;
  */
 class Translator extends TranslatorO
 {
+    /**
+     * Set the plugin manager for translation loaders
+     *
+     * @param  LoaderPluginManager $pluginManager
+     * @return Translator
+     */
+    public function setPluginManager(LoaderPluginManager $pluginManager)
+    {
+        $this->pluginManager = $pluginManager;
+        return $this;
+    }
+
+    /**
+     * Retrieve the plugin manager for translation loaders.
+     *
+     * Lazy loads an instance if none currently set.
+     *
+     * @return LoaderPluginManager
+     */
+    public function getPluginManager()
+    {
+        if (!$this->pluginManager instanceof LoaderPluginManager) {
+            $this->setPluginManager(new LoaderPluginManager());
+        }
+
+        return $this->pluginManager;
+    }
+
     /**
      * Instantiate a translator
      *
