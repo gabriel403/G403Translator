@@ -1,5 +1,5 @@
 {
-    "name": "gabriel403/G403Translator",
+    "name": "gabriel403/g403-translator",
     "description": "Extension to zend translator to support loading translations from db.",
     "type": "library",
     "keywords": [
