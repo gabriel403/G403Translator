@@ -65,7 +65,7 @@ class Translator extends TranslatorO
                 );
             }
 
-            $requiredKeys = array('dbconnection');
+            $requiredKeys = array('db');
             foreach ($options['translation_db'] as $transdb) {
                 foreach ($requiredKeys as $key) {
                     if (!isset($transdb[$key])) {
@@ -77,7 +77,7 @@ class Translator extends TranslatorO
 
                 $translator->addTranslationDb(
                     $transdb['type'],
-                    $transdb['dbconnection'],
+                    $transdb['db'],
                     isset($transdb['locale_table_name']) ? $transdb['locale_table_name'] : 'zend_locale',
                     isset($transdb['messages_table_name']) ? $transdb['messages_table_name'] : 'zend_translate_message',
                     isset($transdb['text_domain']) ? $transdb['text_domain'] : 'default'
@@ -163,7 +163,7 @@ class Translator extends TranslatorO
      */
     public function addTranslationDb(
         $type,
-        $dbconnection,
+        $db,
         $locale_table_name = 'zend_locale',
         $messages_table_name ='zend_translate_message',
         $textDomain = 'default',
@@ -177,7 +177,7 @@ class Translator extends TranslatorO
 
         $this->translationDb[$textDomain][$locale] = array(
             'type'                  => $type,
-            'dbconnection'          => $dbconnection,
+            'db'          => $db,
             'locale_table_name'     => $locale_table_name,
             'messages_table_name'   => $messages_table_name
 

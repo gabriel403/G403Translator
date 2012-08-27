@@ -58,7 +58,7 @@ class Database implements LoaderInterface
      */
     public function load($options, $locale)
     {
-        $this->db = $options['dbconnection'];
+        $this->db = $options['db'];
         $this->locale_table_name = $options['locale_table_name'];
         $this->messages_table_name = $options['messages_table_name'];
 

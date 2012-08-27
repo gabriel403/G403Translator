@@ -31,8 +31,8 @@ class DatabaseTranslatorServiceFactory implements FactoryInterface
 
         if ( isset($trConfig['translation_db']) ) {
             foreach($trConfig['translation_db'] as &$translation_db) {
-                if ( is_string($translation_db['dbconnection']) ) {
-                    $translation_db['dbconnection'] = $serviceLocator->get($translation_db['dbconnection']);
+                if ( is_string($translation_db['db']) ) {
+                    $translation_db['db'] = $serviceLocator->get($translation_db['db']);
                 }
             }
         }
