@@ -17,6 +17,7 @@ use Zend\Cache\Storage\StorageInterface as CacheStorage;
 use Zend\I18n\Exception;
 use Zend\Stdlib\ArrayUtils;
 use Zend\I18n\Translator\Translator as TranslatorO;
+use G403Translator\Translator\LoaderPluginManager;
 
 /**
  * Translator.
