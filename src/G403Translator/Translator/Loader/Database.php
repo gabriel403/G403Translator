@@ -23,7 +23,7 @@ use Zend\I18n\Translator\TextDomain;
  * @package    Zend_I18n
  * @subpackage Translator
  */
-class Database implements LoaderInterface
+class Database implements RemoteLoaderInterface
 {
 
     /**
@@ -48,15 +48,15 @@ class Database implements LoaderInterface
     protected $messages_table_name;
 
     /**
-     * load(): defined by LoaderInterface.
+     * load(): defined by RemoteLoaderInterface.
      *
-     * @see    LoaderInterface::load()
-     * @param  array $options
+     * @see    RemoteLoaderInterface::load()
      * @param  string $locale
+     * @param  array $options
      * @return TextDomain
      * @throws Exception\InvalidArgumentException
      */
-    public function load($options, $locale)
+    public function load($locale, $options)
     {
         $this->db = $options['db'];
         $this->locale_table_name = $options['locale_table_name'];
