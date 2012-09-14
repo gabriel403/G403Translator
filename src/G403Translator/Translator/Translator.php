@@ -273,7 +273,6 @@ class Translator extends TranslatorO
                 }
 
                 $this->messages[$textDomain][$locale] = $loader->load($locale, $textDomain);
-                return;
             }
         }
 
@@ -290,7 +289,6 @@ class Translator extends TranslatorO
                     }
 
                     $this->messages[$textDomain][$locale] = $loader->load($locale, $filename);
-                    return;
                 }
             }
         }
