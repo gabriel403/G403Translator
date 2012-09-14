@@ -12,7 +12,7 @@ namespace G403Translator\Translator\Loader;
 
 use Zend\Db\Adapter\Adapter as DbAdapter;
 use Zend\Db\Sql\Sql;
-use Zend\I18n\Translator\Loader\LoaderInterface;
+use Zend\I18n\Translator\Loader\RemoteLoaderInterface;
 use Zend\I18n\Translator\Plural\Rule as PluralRule;
 use Zend\I18n\Translator\TextDomain;
 
