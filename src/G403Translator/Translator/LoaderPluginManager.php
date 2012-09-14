@@ -10,9 +10,7 @@
 
 namespace G403Translator\Translator;
 
-use Zend\I18n\Exception;
-use Zend\ServiceManager\AbstractPluginManager;
-use Zend\I18n\Translator\Loader;
+use Zend\I18n\Translator\LoaderPluginManager as LoaderPluginManagerO;
 
 /**
  * Plugin manager implementation for translation loaders.
@@ -25,7 +23,7 @@ use Zend\I18n\Translator\Loader;
  * @package    Zend_I18n
  * @subpackage Translator
  */
-class LoaderPluginManager extends AbstractPluginManager
+class LoaderPluginManager extends LoaderPluginManagerO
 {
     /**
      * Default set of loaders
@@ -37,27 +35,4 @@ class LoaderPluginManager extends AbstractPluginManager
         'gettext'  => 'Zend\I18n\Translator\Loader\Gettext',
         'database' => 'G403Translator\Translator\Loader\Database',
     );
-
-    /**
-     * Validate the plugin
-     *
-     * Checks that the filter loaded is an instance of Loader\LoaderInterface.
-     *
-     * @param  mixed $plugin
-     * @return void
-     * @throws Exception\RuntimeException if invalid
-     */
-    public function validatePlugin($plugin)
-    {
-        if ($plugin instanceof Loader\LoaderInterface) {
-            // we're okay
-            return;
-        }
-
-        throw new Exception\RuntimeException(sprintf(
-            'Plugin of type %s is invalid; must implement %s\Loader\LoaderInterface',
-            (is_object($plugin) ? get_class($plugin) : gettype($plugin)),
-            __NAMESPACE__
-        ));
-    }
 }
